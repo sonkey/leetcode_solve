@@ -42,7 +42,7 @@ Could you do this in one pass?
 class Solution {
 public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
-        ListNode dumb(0);
+		ListNode dumb(0);
         dumb.next = head;
 
         ListNode* first = &dumb;

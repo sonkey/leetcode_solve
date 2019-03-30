@@ -32,16 +32,16 @@ Output:
 
 class Solution {
 public:
-  vector<vector<int>> generate(int numRows) {
-    vector<vector<int>> res;
-    for (int i = 0; i < numRows; ++i) {
-      res.push_back(vector<int>{1});
-    }
-    //init
-  	for (int i = 1; i < numRows; ++i) {
-  		res[i].resize(i+1);
-  		res[i][res[i].size() - 1] = 1;
-  	}  
+	vector<vector<int>> generate(int numRows) {
+    	vector<vector<int>> res;
+    	for (int i = 0; i < numRows; ++i) {
+      		res.push_back(vector<int>{1});
+    	}
+    	//init
+  		for (int i = 1; i < numRows; ++i) {
+  			res[i].resize(i+1);
+  			res[i][res[i].size() - 1] = 1;
+  		}  
 
   	for (int row = 2; row < numRows; ++row) {
   		//if (res[row][col] == 1) continue;
