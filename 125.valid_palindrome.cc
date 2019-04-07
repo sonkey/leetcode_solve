@@ -29,43 +29,22 @@ Output: false
 class Solution {
 public:
     bool isPalindrome(string s) {
-        auto bit = s.begin();
-        auto eit = s.end() - 1;
-        while (bit < eit) {
-        	if (!isdigit(*bit) && !isalpha(*bit)) {
-        		++bit;
-        		continue;
-        	}
-        	if (!isdigit(*eit) && !isalpha(*eit)) {
-        		--eit;
-        		continue;
-        	}
+        int l = 0, r = s.size() - 1;
+        while (l < r) {
+            if (!isalnum(s[l])) {
+                l++;
+                continue;
+            }
 
-        	if (isdigit(*bit) && isdigit(*eit)) {
-        		if (*eit == *bit) {
-        			bit++;
-        			eit--;
-                    continue;
-        		}
-        	}
-
-        	if (isalpha(*bit) && isalpha(*eit)) {
-        		if (equal(*bit, *eit)) {
-        			bit++;
-        			eit--;
-        			continue;
-        		}
-        	}
-
-        	return false;
+            if (!isalnum(s[r])) {
+                r--;
+                continue;
+            }
+            if (tolower(s[l]) != tolower(s[r])) 
+              return false;
+            l++;
+            r--;
         }
         return true;
     }
-
-private:
-	bool equal(char a, char b) {
-		if (a == b) return true;
-		if ((a^32) == b || a == (b^32)) return true;
-		return false;
-	}
 };

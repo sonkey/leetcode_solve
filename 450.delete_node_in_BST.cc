@@ -83,6 +83,8 @@ key = 3
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+
+//pointer err
 class Solution {
 public:
     TreeNode* deleteNode(TreeNode* root, int key) {
